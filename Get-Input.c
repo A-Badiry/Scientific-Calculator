@@ -44,6 +44,7 @@ void AddElement(char character)
 void DeleteLinkedList(character** start)
 {
     node block;
+    *start = head;
 
     if (*start == NULL)
     {
@@ -55,6 +56,10 @@ void DeleteLinkedList(character** start)
         *start = (**start).next;
         free(block);
     }
+
+    start = NULL;
+    head = NULL;
+    end = NULL;
 }
 
 

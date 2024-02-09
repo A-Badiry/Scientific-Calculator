@@ -87,11 +87,13 @@ parsetree* CreateTree(char type, long double value, parsetree* left, parsetree* 
 bool StringCmp(character **currentchar, char* functions[])
 {
     char* function = *functions;
+    character* copy2 = *currentchar;
+    character** copy1 = currentchar;
 
     while((*function) != '\0')
     {   
         //If at any moment the characters are not equal return false, else, keep going
-        if((*(*currentchar)).value != (*function))
+        if(*currentchar == NULL || ((*(*currentchar)).value != (*function)))
         {
 
             return false;
@@ -103,7 +105,7 @@ bool StringCmp(character **currentchar, char* functions[])
         function += 1;
 
         //If  the linked list is consumed before the end of the array then they are not equal
-        if ( ((*function) != '\0') && (*currentchar == NULL))
+        if (*currentchar == NULL)
         {
             return false;
         }
@@ -637,6 +639,7 @@ parsetree* ParseFunction(character **currentchar)
 parsetree* ParseConst(character** currentchar)
 {
     parsetree* constant;
+    character* copy = start;
 
     if(StringCmp(currentchar,constants))
     {
@@ -656,19 +659,24 @@ parsetree* ParseConst(character** currentchar)
         return constant;
     }
 
-    else if(StringCmp(currentchar,constants+3))
+
+    //Returning Cursor to the start of the contant
+
+    else if((start = copy) && StringCmp(currentchar,constants+3))
     {
         constant = CreateTree('n', constant_value[3], NULL, NULL);
         return constant;
     }
+	
+    //Returning Cursor to the start of the contant
 
-    else if(StringCmp(currentchar,constants+4))
+    else if((start = copy) && StringCmp(currentchar,constants+4))
     {
         constant = CreateTree('n', constant_value[4], NULL, NULL);
         return constant;
     }
 
-    else if(StringCmp(currentchar,constants+5))
+    else if((start = copy) && StringCmp(currentchar,constants+5))
     {
         constant = CreateTree('n', constant_value[5], NULL, NULL);
         return constant;
