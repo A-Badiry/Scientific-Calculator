@@ -153,7 +153,7 @@ void ParseAndEval(character **currentchar)
 
     //Both functions to free memory after calculation
     FreeTree(parsetree);
-    DeleteLinkedList(currentchar);
+    DeleteLinkedList(head);
 
     return;
 

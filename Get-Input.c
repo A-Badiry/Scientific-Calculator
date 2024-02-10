@@ -23,9 +23,9 @@ void AddElement(char character)
     if(start == NULL)
     {
         start = temp;
+        head = temp;
+        end = temp;
         (*start).value = character;
-        head = start;
-        end = start;
         currentchar = &start;
         return;
     }
