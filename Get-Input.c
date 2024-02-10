@@ -15,9 +15,6 @@ typedef character* node;
 //Function to dynamically add an element to the linked list 
 void AddElement(char character)
 {
-    start = NULL;
-    head = NULL;
-    end = NULL;
     //Allocate mem.
     node temp;
     temp =(node)malloc(sizeof(character));
@@ -59,6 +56,8 @@ void DeleteLinkedList(character* head)
         free(block);
     }
 
+    start = NULL;
+    end = NULL;
 }
 
 
