@@ -52,7 +52,7 @@ extern bool print;
 //Prototype declaration of functions in "Get-Input"
 void GetInput(void);
 void AddElement(char c);
-void DeleteLinkedList(character** start);
+void DeleteLinkedList(character* head);
 
 //Functions declarations of functions in "Lex-Anal.c"
 void ParseAndEval(character **currentchar);
