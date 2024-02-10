@@ -87,32 +87,37 @@ parsetree* CreateTree(char type, long double value, parsetree* left, parsetree* 
 bool StringCmp(character **currentchar, char* functions[])
 {
     char* function = *functions;
-    character* copy2 = *currentchar;
     character** copy1 = currentchar;
+    character* copy2 = start;
 
     while((*function) != '\0')
     {   
         //If at any moment the characters are not equal return false, else, keep going
-        if(*currentchar == NULL || ((*(*currentchar)).value != (*function)))
+        if(copy2 == NULL || ((*(*copy1)).value != (*function)))
         {
-
+            copy1= currentchar;
+            copy2= start;
             return false;
             
         }
 
         //Updating values for next iteration
-        *currentchar = (*(*currentchar)).next;
+        copy2 = (*(*copy1)).next;
         function += 1;
 
         //If  the linked list is consumed before the end of the array then they are not equal
-        if (*currentchar == NULL)
+        if (copy2 == NULL)
         {
+            copy1= currentchar;
+            copy2= start;
             return false;
         }
 
 
     }
 
+    *currentchar = copy2;
+    currentchar =  copy1;
     return true;
 
 }
