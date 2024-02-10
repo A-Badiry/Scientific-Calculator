@@ -41,19 +41,18 @@ void AddElement(char character)
 }
 
 //Function to delete all elements form linked list and free the memory
-void DeleteLinkedList(character** start)
+void DeleteLinkedList(character* head)
 {
     node block;
-    *start = head;
 
-    if (*start == NULL)
+    if (head == NULL)
     {
         return;
     }
-    while(*start != NULL)
+    while(head != NULL)
     {
-        block = *start;
-        *start = (**start).next;
+        block = head;
+        head = (*head).next;
         free(block);
     }
 
