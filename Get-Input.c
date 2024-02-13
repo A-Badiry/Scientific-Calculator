@@ -18,6 +18,7 @@ void AddElement(char character)
     //Allocate mem.
     node temp;
     temp =(node)malloc(sizeof(character));
+    (*temp).next = NULL;
 
     //If the start is null = if linked list does not exist yet
     if(start == NULL)
