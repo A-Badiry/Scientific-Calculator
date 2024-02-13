@@ -45,17 +45,15 @@ Cmd ––––> "exit" | "config" | "sconfig"
 //Function that frees the tree recursively
 void FreeTree(parsetree* root)
 {
+    if (root == NULL)
+	{
+	  return;
+	}
 
-    if (root) {
-
-        if ((*root).left)
-            FreeTree((*root).left);
-        if ((*root).right)
-            FreeTree((*root).right);
+    FreeTree((*root).left);
+    FreeTree((*root).right);
 
         free(root);
-
-    }
 }
 
 parsetree* CreateTree(char type, long double value, parsetree* left, parsetree* right)
@@ -87,37 +85,25 @@ parsetree* CreateTree(char type, long double value, parsetree* left, parsetree* 
 bool StringCmp(character **currentchar, char* functions[])
 {
     char* function = *functions;
-    character** copy1 = currentchar;
-    character* copy2 = start;
+    character* copy = *currentchar;
 
     while((*function) != '\0')
     {   
         //If at any moment the characters are not equal return false, else, keep going
-        if(copy2 == NULL || ((*(*copy1)).value != (*function)))
+        if(copy == NULL || ((*copy).value != (*function)))
         {
-            copy1= currentchar;
-            copy2= start;
             return false;
             
         }
 
         //Updating values for next iteration
-        copy2 = (*(*copy1)).next;
+        copy = (*copy).next;
         function += 1;
-
-        //If  the linked list is consumed before the end of the array then they are not equal
-        if (copy2 == NULL)
-        {
-            copy1= currentchar;
-            copy2= start;
-            return false;
-        }
 
 
     }
 
-    *currentchar = copy2;
-    currentchar =  copy1;
+    *currentchar = copy;
     return true;
 
 }
@@ -131,7 +117,7 @@ bool StringCmp(character **currentchar, char* functions[])
 /*############################################################# Recursive descent parser functions ###############################################################*/
 
 //Function to organize the flow of the program (Called by "main()" fct)
-void ParseAndEval(character **currentchar)
+void ParseAndEval(character** currentchar)
 {
     long double result;
     parsetree* parsetree;
@@ -153,7 +139,7 @@ void ParseAndEval(character **currentchar)
 
     //Both functions to free memory after calculation
     FreeTree(parsetree);
-    DeleteLinkedList(head);
+    DeleteLinkedList(currentchar);
 
     return;
 
@@ -226,13 +212,14 @@ parsetree* ParseExpression(character **currentchar)
 parsetree* ParseTerm(character **currentchar)
 {
 
-    parsetree* left_term = NULL;
+    parsetree* left_term = ParseFactor(currentchar);
     parsetree* right_term = NULL;
     char type;
 
     //Parse for a factor to get the operands of the term, and also for precedence of parenthesis
-    left_term = ParseFactor(currentchar);
 
+
+    
     //Checking for *(mult) or /(div) operators
     while((*currentchar != NULL) && ((*(*currentchar)).value == '*' || (*(*currentchar)).value == '/'))
     {
@@ -318,20 +305,20 @@ parsetree* ParseFactor(character **currentchar)
         if(*currentchar == head)
         {    
             //Bringing cursor to the starting position after each check
-            character* seek_start = *currentchar;
+            //character* seek_start = *currentchar;
             
             //Parsing for commands
             if(StringCmp(currentchar, commands))
             {
                 exit(0);
             }
-            else if((*currentchar = seek_start) && StringCmp(currentchar, commands+1))
+            else if(StringCmp(currentchar, commands+1))
             {
                 UpdateConfig();
                 factor = CreateTree('n', 0.0, NULL, NULL);
                 return factor;
             }
-            else if((*currentchar = seek_start) && StringCmp(currentchar, commands+2))
+            else if(StringCmp(currentchar, commands+2))
             {
                 ShowConfig();
                 factor = CreateTree('n', 0.0, NULL, NULL);
@@ -341,7 +328,6 @@ parsetree* ParseFactor(character **currentchar)
             //If the input is not a command then it is probably a function
             else
             {
-                *currentchar = seek_start;
                 factor = ParseFunction(currentchar);
             }
 

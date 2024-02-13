@@ -41,23 +41,26 @@ void AddElement(char character)
 }
 
 //Function to delete all elements form linked list and free the memory
-void DeleteLinkedList(character* head)
+void DeleteLinkedList(character** start)
 {
     node block;
+    (*start) = head;
 
-    if (head == NULL)
+    if ((*start) == NULL)
     {
         return;
     }
-    while(head != NULL)
+    while((*start) != NULL)
     {
-        block = head;
-        head = (*head).next;
+        block = (*start);
+        (*start) = (**start).next;
         free(block);
     }
 
-    start = NULL;
+    head = NULL;
+    *start = NULL;
     end = NULL;
+    start = NULL;
 }
 
 
@@ -66,7 +69,7 @@ void GetInput(void)
 {
     char inputchar;
 
-    while ((inputchar = getchar()) != '\n' && inputchar != EOF) 
+    while ((inputchar = getchar()) != '\n' && inputchar != '\000' && inputchar != EOF) 
     {
         //Ignoring the space character
         if(inputchar != ' ')
