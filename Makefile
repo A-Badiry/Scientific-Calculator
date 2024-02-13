@@ -18,4 +18,4 @@ Fcts.o: Fcts.c
 	gcc -Wall -g -c Fcts.c -lm
 
 clean :
-	rm -f *.o Calculator -lm
+	rm -f *.o Calculator
