@@ -132,6 +132,10 @@ Cmd    → "exit" | "config" | "sconfig"
 - `Cmd`: Represents the commands recognized by the calculator.
 - `#`: Represents a double numeric value.
 
+## Documentation
+
+To check out the doxygen-created documentation click [HERE](https://a-badiry.github.io/Scientific-Calculator/index.html)
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or enhancements, feel free to contact me: achraf.badiry@edu.bme.hu
