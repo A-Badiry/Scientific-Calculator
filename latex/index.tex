@@ -1,0 +1,155 @@
+\chapter{Scientific Calculator}
+\hypertarget{index}{}\label{index}\index{Scientific Calculator@{Scientific Calculator}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+ Welcome to the Scientific Calculator Git\+Hub repository! This project is a command-\/line scientific calculator that supports various mathematical functions and constants. It is designed to handle mathematical expressions such as "{}3\texorpdfstring{$\ast$}{*}sin(21) -\/ (22/11 +3)"{}. It uses a recursive descent parsing (RDP) algorithm.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Expression Format\+:}}
+\begin{DoxyItemize}
+\item The calculator accepts input expressions of the form\+: "{}3\texorpdfstring{$\ast$}{*}sin(21) -\/ (22/11 +3)"{}.
+\end{DoxyItemize}
+\item {\bfseries{Commands\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily config}\+: Configure the calculator settings, including angle unit, notation, and float precision.
+\item {\ttfamily sconfig}\+: Show the current configuration (e.\+g., RAD, Nrm, 4).
+\item {\ttfamily exit}\+: Exit the calculator.
+\end{DoxyItemize}
+\item {\bfseries{Math Functions\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily sin}\+: Sine function.
+\item {\ttfamily cos}\+: Cosine function.
+\item {\ttfamily tan}\+: Tangent function.
+\item {\ttfamily exp}\+: Exponential function.
+\item {\ttfamily log}\+: Logarithmic function.
+\item {\ttfamily sqrt}\+: Square root function.
+\end{DoxyItemize}
+\item {\bfseries{Constants\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily C}\+: Speed of light.
+\item {\ttfamily R}\+: Universal gas constant.
+\item {\ttfamily G}\+: Gravitational constant.
+\item {\ttfamily Me}\+: Electron mass.
+\item {\ttfamily Mp}\+: Proton mass.
+\item {\ttfamily Mn}\+: Neutron mass.
+\item {\ttfamily E}\+: Electron charge.
+\item {\ttfamily Na}\+: Avogadro\textquotesingle{}s number.
+\item {\ttfamily Vm}\+: Molar volume of ideal gas.
+\item {\ttfamily ANS}\+: Result of the last calculation.
+\item {\ttfamily PI}\+: Mathematical constant Pi.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Getting Started}{Getting Started}}\label{index_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Clone the repository to your local machine\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/A-\/Badiry/scientific-\/calculator.git}
+
+\end{DoxyCode}
+
+\item Navigate to the project directory\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ scientific-\/calculator}
+
+\end{DoxyCode}
+
+\item Compile the calculator\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+\item Run the calculator
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./Calculator}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{index_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Input mathematical expressions using the specified format.
+\item Use the commands ({\ttfamily config}, {\ttfamily sconfig}, {\ttfamily exit}) to configure settings and control the calculator.
+\item Explore various math functions and constants.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Configuration}{Configuration}}\label{index_autotoc_md4}
+The {\ttfamily config} command allows you to customize the calculator\textquotesingle{}s configuration\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{config}
+
+\end{DoxyCode}
+
+
+Example output\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Enter\ angle\ unit\ (D(deg)/R(rad)/G(gra)):\ R}
+\DoxyCodeLine{Enter\ notation\ (N(Nrm)/S(Sci)):\ D}
+\DoxyCodeLine{Enter\ float\ precision\ (integer):\ 4}
+
+\end{DoxyCode}
+ \hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Default Configuration}{Default Configuration}}\label{index_autotoc_md5}
+The calculator comes pre-\/configured with the following settings\+:
+
+Angle Unit\+: RAD Notation\+: Sci (Scientific) Float Precision\+: 4\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Show Configuration}{Show Configuration}}\label{index_autotoc_md6}
+The {\ttfamily sconfig} command displays the current configuration\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sconfig}
+
+\end{DoxyCode}
+
+
+Example output\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{RAD,\ Sci,\ 4}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Exit the Calculator}{Exit the Calculator}}\label{index_autotoc_md7}
+To exit the calculator, use the {\ttfamily exit} command\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{exit}
+
+\end{DoxyCode}
+ \hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Context-\/\+Free Grammar (CFG)}{Context-\/\+Free Grammar (CFG)}}\label{index_autotoc_md8}
+The calculator\textquotesingle{}s input expressions can be described by the following Context-\/\+Free Grammar\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{E\ \ \ \ \ \ →\ E\ +\ T\ |\ E\ -\/\ T\ |\ T}
+\DoxyCodeLine{T\ \ \ \ \ \ →\ T\ *\ F\ |\ T\ /\ F\ |\ F}
+\DoxyCodeLine{F\ \ \ \ \ \ →\ (-\/\#)\ |\ (E)\ |\ Fct\ |\ Const\ |\ Cmd\ |\ \#}
+\DoxyCodeLine{Fct\ \ \ \ →\ "{}cos()"{}\ |\ "{}sin()"{}\ |\ "{}tan()"{}\ |\ "{}exp()"{}\ |\ "{}log()"{}\ |\ "{}sqrt()"{}}
+\DoxyCodeLine{Const\ \ →\ "{}C"{}\ |\ "{}G"{}\ |\ "{}Me"{}\ |\ "{}Mp"{}\ |\ "{}Mn"{}\ |\ "{}E"{}\ |\ "{}Na"{}\ |\ "{}Vm"{}\ |\ "{}R"{}\ |\ "{}ANS"{}\ |\ "{}PI"{}}
+\DoxyCodeLine{Cmd\ \ \ \ →\ "{}exit"{}\ |\ "{}config"{}\ |\ "{}sconfig"{}}
+\DoxyCodeLine{\#\ \ \ \ \ \ →\ \{0,1,2,3,4,5,6,7,8,9\}*\ .\ \{0,1,2,3,4,5,6,7,8,9\}*}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md9}{}\doxysubsection{\texorpdfstring{Grammar Explanation\+:}{Grammar Explanation\+:}}\label{index_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\ttfamily E}\+: Represents the expression, which can be composed of addition, subtraction, or just a term.
+\item {\ttfamily T}\+: Represents a term, which can be composed of multiplication, division, or just a factor.
+\item {\ttfamily F}\+: Represents a factor, which can be a negation, a parenthesized expression, a function, a constant, a command, or an empty string.
+\item {\ttfamily Fct}\+: Represents the mathematical functions supported by the calculator.
+\item {\ttfamily Const}\+: Represents the constants recognized by the calculator.
+\item {\ttfamily Cmd}\+: Represents the commands recognized by the calculator.
+\item {\ttfamily \#}\+: Represents a double numeric value.
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{index_autotoc_md10}
+Contributions are welcome! If you have any suggestions, bug reports, or enhancements, feel free to contact me\+: \href{mailto:achraf.badiry@edu.bme.hu}{\texttt{ achraf.\+badiry@edu.\+bme.\+hu}}\hypertarget{index_autotoc_md11}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md11}
+This project is licensed under the GNU General Public License -\/ see the \href{https://www.gnu.org/licenses/gpl-3.0.html}{\texttt{ LICENSE}} website for details. 

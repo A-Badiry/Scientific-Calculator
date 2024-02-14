@@ -1,0 +1,82 @@
+\doxysection{Get-\/\+Input.c File Reference}
+\hypertarget{_get-_input_8c}{}\label{_get-_input_8c}\index{Get-\/Input.c@{Get-\/Input.c}}
+{\ttfamily \#include "{}Lib.\+h"{}}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_get-_input_8c_a691379e22a26c018777c2ca34ea4f73e}\label{_get-_input_8c_a691379e22a26c018777c2ca34ea4f73e} 
+typedef \mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*} {\bfseries node}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_get-_input_8c_a0f7e677cc84ff9d4e67054adfa9ac641}{Add\+Element}} (char \mbox{\hyperlink{structcharacter}{character}})
+\begin{DoxyCompactList}\small\item\em Function to allocate the memory for an instance of the struct "{}character"{} and assigns it a value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_get-_input_8c_a325203952628981bc74166bd7de03968}{Delete\+Linked\+List}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_afb92db02b6d9b7df7302bff35573bc47}{start}})
+\begin{DoxyCompactList}\small\item\em Function to delete the linked list. \end{DoxyCompactList}\item 
+\Hypertarget{_get-_input_8c_a842c28d20fb76863eabd0b7bbbce583d}\label{_get-_input_8c_a842c28d20fb76863eabd0b7bbbce583d} 
+void {\bfseries Get\+Input} (void)
+\begin{DoxyCompactList}\small\item\em Function to read the input from the "{}stdin"{} file and stores it in the linked list by calling \doxylink{_get-_input_8c_a0f7e677cc84ff9d4e67054adfa9ac641}{Add\+Element()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_get-_input_8c_afb92db02b6d9b7df7302bff35573bc47}\label{_get-_input_8c_afb92db02b6d9b7df7302bff35573bc47} 
+\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*} {\bfseries start} = NULL
+\begin{DoxyCompactList}\small\item\em Pointer used to parse through the linked list to generate the parsetree. \end{DoxyCompactList}\item 
+\Hypertarget{_get-_input_8c_aac8e84e3088ba9f188605c503a396da3}\label{_get-_input_8c_aac8e84e3088ba9f188605c503a396da3} 
+\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*} {\bfseries head} = NULL
+\begin{DoxyCompactList}\small\item\em Pointer that points to the start of the linked list and is used for deletion. \end{DoxyCompactList}\item 
+\Hypertarget{_get-_input_8c_a64db01b982c2b79146378a8204d28cbb}\label{_get-_input_8c_a64db01b982c2b79146378a8204d28cbb} 
+\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*} {\bfseries end} = NULL
+\begin{DoxyCompactList}\small\item\em Pointer that points to the end of the linked list to add new elements to it. \end{DoxyCompactList}\item 
+\Hypertarget{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}\label{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1} 
+\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} {\bfseries currentchar}
+\begin{DoxyCompactList}\small\item\em Pointer to pointer that helps modifying the value of the pointer \doxylink{_get-_input_8c_afb92db02b6d9b7df7302bff35573bc47}{start} while passing through multiple functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Achraf Badiry (\href{mailto:achraf.badiry@edu.bme.hu}{\texttt{ achraf.\+badiry@edu.\+bme.\+hu}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/02-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GNU General Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_get-_input_8c_a0f7e677cc84ff9d4e67054adfa9ac641}\label{_get-_input_8c_a0f7e677cc84ff9d4e67054adfa9ac641} 
+\index{Get-\/Input.c@{Get-\/Input.c}!AddElement@{AddElement}}
+\index{AddElement@{AddElement}!Get-\/Input.c@{Get-\/Input.c}}
+\doxysubsubsection{\texorpdfstring{AddElement()}{AddElement()}}
+{\footnotesize\ttfamily void Add\+Element (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Function to allocate the memory for an instance of the struct "{}character"{} and assigns it a value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Value to be assigned to an instance \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_get-_input_8c_a325203952628981bc74166bd7de03968}\label{_get-_input_8c_a325203952628981bc74166bd7de03968} 
+\index{Get-\/Input.c@{Get-\/Input.c}!DeleteLinkedList@{DeleteLinkedList}}
+\index{DeleteLinkedList@{DeleteLinkedList}!Get-\/Input.c@{Get-\/Input.c}}
+\doxysubsubsection{\texorpdfstring{DeleteLinkedList()}{DeleteLinkedList()}}
+{\footnotesize\ttfamily void Delete\+Linked\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+Function to delete the linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointer to the pointer to the start of the linked list \\
+\hline
+\end{DoxyParams}

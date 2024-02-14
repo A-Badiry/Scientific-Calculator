@@ -1,0 +1,277 @@
+\doxysection{Lex-\/\+Analysis.c File Reference}
+\hypertarget{_lex-_analysis_8c}{}\label{_lex-_analysis_8c}\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+{\ttfamily \#include "{}Lib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_lex-_analysis_8c_a48dd4ea31a7a1b2bf38e01f5cbe7bf9b}{Free\+Tree}} (\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}root)
+\begin{DoxyCompactList}\small\item\em Function to recursively free the tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lex-_analysis_8c_a8287252fc699511882f1b8b31fa8b1dd}{Create\+Tree}} (char type, long double value, \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}left, \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}right)
+\begin{DoxyCompactList}\small\item\em Function that creates a node in the tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_lex-_analysis_8c_ac6fd0766da7a2b1d8bf33b9a498eb949}{String\+Cmp}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}}, char \texorpdfstring{$\ast$}{*}functions\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function to compare the functions, constants and commands input by the user with supported built-\/in functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_lex-_analysis_8c_aeccec770f72b57dbb91d27d4928be271}{Parse\+And\+Eval}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}})
+\begin{DoxyCompactList}\small\item\em Function that drives the flow of the program. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{_lex-_analysis_8c_ae4245f0b6df0c2aac8949d602ef1fc8d}{Calculate}} (\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structparsetree}{parsetree}})
+\begin{DoxyCompactList}\small\item\em Function to recursively evaluate the parsing tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lex-_analysis_8c_a6d1a167dad8ea5eac300a4f658e07745}{Parse\+Expression}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}})
+\begin{DoxyCompactList}\small\item\em Function to parse expression. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lex-_analysis_8c_a22779d67401fe95c0906d3e9ee489ba1}{Parse\+Term}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}})
+\begin{DoxyCompactList}\small\item\em Function to parse a term. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lex-_analysis_8c_ab139f24a68a3321f7fb9695481a18b13}{Parse\+Factor}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}})
+\begin{DoxyCompactList}\small\item\em Function to parse a factor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lex-_analysis_8c_ad47d788a736637bacbd3752c3120443f}{Parse\+Function}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}})
+\begin{DoxyCompactList}\small\item\em Function to parse a mathematical function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lex-_analysis_8c_ae5896b39e48fda35e7cc0dbb2793924a}{Parse\+Const}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}})
+\begin{DoxyCompactList}\small\item\em Function to parse a constant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lex-_analysis_8c_aa3dca7738e46bcf2b56a3cf00310c7e5}{Parse\+Number}} (\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_get-_input_8c_a931de839ee51c2ad0132ddb81f3029c1}{currentchar}})
+\begin{DoxyCompactList}\small\item\em Function to parse a number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_lex-_analysis_8c_aff512febd44b06614c3c8db564d8f42a}\label{_lex-_analysis_8c_aff512febd44b06614c3c8db564d8f42a} 
+char \texorpdfstring{$\ast$}{*} {\bfseries functions} \mbox{[}$\,$\mbox{]} = \{"{}cos("{},"{}exp("{},"{}log("{},"{}sin("{},"{}sqrt("{},"{}tan("{}\}
+\item 
+\Hypertarget{_lex-_analysis_8c_af30c888f31a3e4f169ffefb08ba45c9a}\label{_lex-_analysis_8c_af30c888f31a3e4f169ffefb08ba45c9a} 
+char \texorpdfstring{$\ast$}{*} {\bfseries commands} \mbox{[}$\,$\mbox{]} =\{"{}exit"{},"{}config"{},"{}sconfig"{}\}
+\item 
+\Hypertarget{_lex-_analysis_8c_a90e379efea215bf3b60a723ae29fd79f}\label{_lex-_analysis_8c_a90e379efea215bf3b60a723ae29fd79f} 
+char \texorpdfstring{$\ast$}{*} {\bfseries constants} \mbox{[}$\,$\mbox{]} = \{"{}C"{},"{}G"{},"{}Me"{},"{}Mp"{},"{}Mn"{},"{}E"{},"{}Na"{},"{}Vm"{},"{}R"{},"{}ANS"{},"{}PI"{}\}
+\item 
+long double \mbox{\hyperlink{_lex-_analysis_8c_a6a50d0879f18e8172c580db7ba22955d}{constant\+\_\+value}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Achraf Badiry (\href{mailto:achraf.badiry@edu.bme.hu}{\texttt{ achraf.\+badiry@edu.\+bme.\+hu}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/02-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GNU General Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_lex-_analysis_8c_ae4245f0b6df0c2aac8949d602ef1fc8d}\label{_lex-_analysis_8c_ae4245f0b6df0c2aac8949d602ef1fc8d} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!Calculate@{Calculate}}
+\index{Calculate@{Calculate}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{Calculate()}{Calculate()}}
+{\footnotesize\ttfamily long double Calculate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Function to recursively evaluate the parsing tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Pointer to the root of the parsing tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long double Result of the calculation 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_a8287252fc699511882f1b8b31fa8b1dd}\label{_lex-_analysis_8c_a8287252fc699511882f1b8b31fa8b1dd} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!CreateTree@{CreateTree}}
+\index{CreateTree@{CreateTree}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{CreateTree()}{CreateTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} Create\+Tree (\begin{DoxyParamCaption}\item[{char}]{type,  }\item[{long double}]{value,  }\item[{\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}}]{left,  }\item[{\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}}]{right }\end{DoxyParamCaption})}
+
+
+
+Function that creates a node in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of character to be inserted (number or operator) \\
+\hline
+{\em value} & Value to be inserted \\
+\hline
+{\em left} & Pointer to the left child \\
+\hline
+{\em right} & Pointer to the right child \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsetree\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_a48dd4ea31a7a1b2bf38e01f5cbe7bf9b}\label{_lex-_analysis_8c_a48dd4ea31a7a1b2bf38e01f5cbe7bf9b} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!FreeTree@{FreeTree}}
+\index{FreeTree@{FreeTree}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{FreeTree()}{FreeTree()}}
+{\footnotesize\ttfamily void Free\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*}}]{root }\end{DoxyParamCaption})}
+
+
+
+Function to recursively free the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & Pointer to the root of the tree \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_lex-_analysis_8c_aeccec770f72b57dbb91d27d4928be271}\label{_lex-_analysis_8c_aeccec770f72b57dbb91d27d4928be271} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!ParseAndEval@{ParseAndEval}}
+\index{ParseAndEval@{ParseAndEval}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{ParseAndEval()}{ParseAndEval()}}
+{\footnotesize\ttfamily void Parse\+And\+Eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar }\end{DoxyParamCaption})}
+
+
+
+Function that drives the flow of the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to first element of the linked list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_lex-_analysis_8c_ae5896b39e48fda35e7cc0dbb2793924a}\label{_lex-_analysis_8c_ae5896b39e48fda35e7cc0dbb2793924a} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!ParseConst@{ParseConst}}
+\index{ParseConst@{ParseConst}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{ParseConst()}{ParseConst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} Parse\+Const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar }\end{DoxyParamCaption})}
+
+
+
+Function to parse a constant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to the current element pointed to on the linked list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsetree\texorpdfstring{$\ast$}{*} Modifies and returns the parse tree 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_a6d1a167dad8ea5eac300a4f658e07745}\label{_lex-_analysis_8c_a6d1a167dad8ea5eac300a4f658e07745} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!ParseExpression@{ParseExpression}}
+\index{ParseExpression@{ParseExpression}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{ParseExpression()}{ParseExpression()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} Parse\+Expression (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar }\end{DoxyParamCaption})}
+
+
+
+Function to parse expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to the current element pointed to on the linked list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsetree\texorpdfstring{$\ast$}{*} Modifies and returns the parse tree 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_ab139f24a68a3321f7fb9695481a18b13}\label{_lex-_analysis_8c_ab139f24a68a3321f7fb9695481a18b13} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!ParseFactor@{ParseFactor}}
+\index{ParseFactor@{ParseFactor}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{ParseFactor()}{ParseFactor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} Parse\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar }\end{DoxyParamCaption})}
+
+
+
+Function to parse a factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to the current element pointed to on the linked list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsetree\texorpdfstring{$\ast$}{*} Modifies and returns the parse tree 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_ad47d788a736637bacbd3752c3120443f}\label{_lex-_analysis_8c_ad47d788a736637bacbd3752c3120443f} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!ParseFunction@{ParseFunction}}
+\index{ParseFunction@{ParseFunction}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{ParseFunction()}{ParseFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} Parse\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar }\end{DoxyParamCaption})}
+
+
+
+Function to parse a mathematical function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to the current element pointed to on the linked list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsetree\texorpdfstring{$\ast$}{*} Modifies and returns the parse tree 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_aa3dca7738e46bcf2b56a3cf00310c7e5}\label{_lex-_analysis_8c_aa3dca7738e46bcf2b56a3cf00310c7e5} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!ParseNumber@{ParseNumber}}
+\index{ParseNumber@{ParseNumber}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{ParseNumber()}{ParseNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} Parse\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar }\end{DoxyParamCaption})}
+
+
+
+Function to parse a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to the current element pointed to on the linked list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsetree\texorpdfstring{$\ast$}{*} Modifies and returns the parse tree 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_a22779d67401fe95c0906d3e9ee489ba1}\label{_lex-_analysis_8c_a22779d67401fe95c0906d3e9ee489ba1} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!ParseTerm@{ParseTerm}}
+\index{ParseTerm@{ParseTerm}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{ParseTerm()}{ParseTerm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparsetree}{parsetree}} \texorpdfstring{$\ast$}{*} Parse\+Term (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar }\end{DoxyParamCaption})}
+
+
+
+Function to parse a term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to the current element pointed to on the linked list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsetree\texorpdfstring{$\ast$}{*} Modifies and returns the parse tree 
+\end{DoxyReturn}
+\Hypertarget{_lex-_analysis_8c_ac6fd0766da7a2b1d8bf33b9a498eb949}\label{_lex-_analysis_8c_ac6fd0766da7a2b1d8bf33b9a498eb949} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!StringCmp@{StringCmp}}
+\index{StringCmp@{StringCmp}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{StringCmp()}{StringCmp()}}
+{\footnotesize\ttfamily bool String\+Cmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcharacter}{character}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{currentchar,  }\item[{char \texorpdfstring{$\ast$}{*}}]{functions\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function to compare the functions, constants and commands input by the user with supported built-\/in functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em currentchar} & Pointer to pointer to the current element pointed to on the linked list \\
+\hline
+{\em functions} & Array of character pointer pointing to the functions, constants or commands supported \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If input by the user is supported 
+
+false If input by the user is unsupported 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_lex-_analysis_8c_a6a50d0879f18e8172c580db7ba22955d}\label{_lex-_analysis_8c_a6a50d0879f18e8172c580db7ba22955d} 
+\index{Lex-\/Analysis.c@{Lex-\/Analysis.c}!constant\_value@{constant\_value}}
+\index{constant\_value@{constant\_value}!Lex-\/Analysis.c@{Lex-\/Analysis.c}}
+\doxysubsubsection{\texorpdfstring{constant\_value}{constant\_value}}
+{\footnotesize\ttfamily long double constant\+\_\+value\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{299792458.0,\ 6.6741E-\/11,\ 9.1094E-\/31,\ 1.6726E-\/27,\ 1.6749E-\/27,\ 1.6022E-\/19,\ 6.0221E23,\ 2.2414E-\/2,\ 8.314462618,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3.141592653589793238462643383279502884L\}}
+
+\end{DoxyCode}
