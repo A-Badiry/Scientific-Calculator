@@ -1,4 +1,13 @@
-// this file would contain the data structure and the functions that gather the data entered by the user
+/**
+ * @file Get-Input.c
+ * @author Achraf Badiry (achraf.badiry@edu.bme.hu)
+ * @brief 
+ * @version 0.1
+ * @date 2024-02-14
+ * 
+ * @copyright GNU General Public License
+ * 
+ */
 
 #include "Lib.h"
 

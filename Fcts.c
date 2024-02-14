@@ -1,3 +1,13 @@
+/**
+ * @file Fcts.c
+ * @author Achraf Badiry (achraf.badiry@edu.bme.hu)
+ * @brief 
+ * @version 0.1
+ * @date 2024-02-14
+ * 
+ * @copyright GNU General Public License
+ * 
+ */
 #include "Lib.h"
 
 
