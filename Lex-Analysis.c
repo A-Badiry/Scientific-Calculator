@@ -119,6 +119,12 @@ bool StringCmp(character **currentchar, char* functions[])
 //Function to organize the flow of the program (Called by "main()" fct)
 void ParseAndEval(character** currentchar)
 {
+    if(currentchar == NULL)
+    {
+        return;
+    }
+
+
     long double result;
     parsetree* parsetree;
 

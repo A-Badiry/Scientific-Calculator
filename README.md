@@ -1,6 +1,6 @@
 # Scientific Calculator
 
-Welcome to the Scientific Calculator GitHub repository! This project is a command-line scientific calculator that supports various mathematical functions and constants. It is designed to handle mathematical expressions such as "3*sin(21) - (22/11 +3)".
+Welcome to the Scientific Calculator GitHub repository! This project is a command-line scientific calculator that supports various mathematical functions and constants. It is designed to handle mathematical expressions such as "3*sin(21) - (22/11 +3)". It uses a recursive descent parsing (RDP) algorithm.
 
 ## Features
 

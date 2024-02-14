@@ -70,15 +70,15 @@ void GetInput(void)
 {
     char inputchar;
 
-    while ((inputchar = getchar()) != '\n' && inputchar != '\000' && inputchar != EOF) 
-    {
-        //Ignoring the space character
-        if(inputchar != ' ')
+        while ((inputchar = getchar()) != '\n' && inputchar != EOF) 
         {
-            AddElement(inputchar);
+            //Ignoring the space character
+            if(inputchar != ' ')
+            {
+                AddElement(inputchar);
+            }
         }
-    }
-
+    
 }
 
 
